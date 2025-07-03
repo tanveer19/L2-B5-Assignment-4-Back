@@ -1,0 +1,28 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsnd --respawn src/server.ts",
+    "build": "tsc",
+    "lint": "npx eslint .",
+    "lint-fix": "npx eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "eslint": "^9.29.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.0",
+    "validator": "^13.15.15"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/validator": "^13.15.2",
+    "ts-node-dev": "^2.0.0"
+  }
+}
