@@ -33,13 +33,12 @@ const bookSchema = new Schema<IBookDocument, IBookModel>(
       unique: true,
       validate: {
         validator: function (v: string) {
-          return /^(?:ISBN(?:-1[03])?:?\s)?(?=[0-9X]{10}$|(?=(?:[0-9]+[-\s]){3})[-\s0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[-\s]){4})[-\s0-9]{17}$)(?:97[89][-\s]?)?[0-9]{1,5}[-\s]?[0-9]+[-\s]?[0-9]+[-\s]?[0-9X]$/.test(
-            v
-          );
+          return /^\d{13}$/.test(v);
         },
-        message: (props) => `${props.value} is not a valid ISBN!`,
+        message: (props) => `${props.value} must be exactly 13 digits`,
       },
     },
+
     description: {
       type: String,
       trim: true,
