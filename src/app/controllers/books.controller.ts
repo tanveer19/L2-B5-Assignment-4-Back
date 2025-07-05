@@ -117,9 +117,8 @@ booksRoutes.put("/:bookId", (async (req: Request, res: Response) => {
   try {
     const bookId = req.params.bookId;
     const updatedBody = req.body;
-    const book = await Book.findByIdAndUpdate(bookId, updatedBody, {
-      new: true,
-    });
+
+    const book = await Book.findById(bookId);
 
     if (!book) {
       return res.status(404).json({
@@ -127,6 +126,9 @@ booksRoutes.put("/:bookId", (async (req: Request, res: Response) => {
         message: "Book not found",
       });
     }
+
+    Object.assign(book, updatedBody);
+    await book.save();
 
     const data = formatBook(book);
 
