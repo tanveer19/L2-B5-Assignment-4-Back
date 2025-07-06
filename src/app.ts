@@ -7,7 +7,10 @@ const app: Application = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // ⬅️ allow  Vite frontend
+    origin: [
+      "http://localhost:5173",
+      "https://l2-b5-assignment-4-front.vercel.app",
+    ], // ⬅️ allow  Vite frontend
     credentials: true, // optional if you’re sending cookies or auth headers
   })
 );
