@@ -1,4 +1,8 @@
-# 📚 Library Management API
+# 📚 Library Management Backend
+
+Live site:
+
+https://l2-b5-assignment-4-back.vercel.app/
 
 A professional RESTful API for managing books and borrow records in a library system, built with Node.js, Express, TypeScript, and MongoDB (Mongoose).
 
@@ -109,30 +113,3 @@ app.ts
 ```
 
 ---
-
-## 📝 Example Requests
-
-**Create a Book**
-
-```json
-POST /api/books
-{
-  "title": "The Theory of Everything",
-  "author": "Stephen Hawking",
-  "genre": "SCIENCE",
-  "isbn": "9780553380163",
-  "description": "An overview of cosmology and black holes.",
-  "copies": 10
-}
-```
-
-**Borrow a Book**
-
-```json
-POST /api/borrow
-{
-  "book": "BOOK_OBJECT_ID",
-  "quantity": 2,
-  "dueDate": "2025-07-18T00:00:00.000Z"
-}
-```
